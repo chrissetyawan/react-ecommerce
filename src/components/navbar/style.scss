@@ -1,0 +1,68 @@
+@import "../../scss/variables";
+
+.navbar {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  max-height: $height-navbar;
+  min-height: $height-navbar;
+  width: 100%;
+  background: $white;
+  box-shadow:
+    0 0px 1.2px -15px rgba(0, 0, 0, 0.216),
+    0 0px 3.3px -15px rgba(0, 0, 0, 0.31),
+    0 0px 7.8px -15px rgba(0, 0, 0, 0.404),
+    0 0px 26px -15px rgba(0, 0, 0, 0.62)
+  ;
+
+  .search-box {
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+
+    input {
+      cursor: pointer;
+      outline: none;
+      padding: 15px 20px 20px 50px;
+      background-color: $light-gray;
+      border: none;
+      border-radius: 15px;
+      width: 100%;
+      //border: 2px solid transparentize($gray, 0.8);
+    }
+
+    .icon {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      color: transparentize($gray, 0.4);
+    }
+  }
+
+  .title-bar {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+
+    .action-box {
+      width: 60px;
+
+      button {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}

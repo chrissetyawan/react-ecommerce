@@ -1,0 +1,39 @@
+$primary: #0DC18A;
+$blue: #1278F3;
+$black: #222D38;
+$dark-gray: #3D4D62;
+$gray: #6E7D96;
+$light-gray: #F4F5F7;
+$white: #FFFFFF;
+$bg-color: #F5F5F5;
+$pink: #FA543B;
+
+$height-navbar: 75px;
+$mobile-screen: 500px;
+
+%padding-view {
+  padding-top: $height-navbar;
+  padding-bottom: $height-navbar + 10;
+}
+
+%view-basic {
+  min-height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+    overflow-x: auto;
+    padding: 20px 0;
+
+    @media(max-width: $mobile-screen) {
+      padding-bottom: 100px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

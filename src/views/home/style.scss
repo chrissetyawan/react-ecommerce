@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.home {
+  @extend %view-basic;
+
+  .content {
+
+    .categories {
+      margin-bottom: 30px;
+      display: flex;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .products {
+      padding: 0 20px;
+
+      .subtitle {
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+
+    }
+  }
+}

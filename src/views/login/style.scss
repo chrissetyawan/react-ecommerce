@@ -1,0 +1,89 @@
+@import "../../scss/variables";
+
+.login {
+
+  .body {
+    padding: 20px 20px;
+
+    .title {
+      font-weight: 600;
+      font-size: 2.8rem;
+    }
+
+    .form {
+      margin-top: 20px;
+
+      .input-group {
+        margin: 20px 0;
+        position: relative;
+
+        .icon {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          color: transparentize($gray, 0.3);
+        }
+
+        input {
+          padding: 20px 60px;
+          font-family: inherit;
+          font-size: 1rem;
+          width: 100%;
+          border: none;
+          background-color: $light-gray;
+          border-radius: 15px;
+        }
+
+        .forgot-password {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+
+          a {
+            color: $blue;
+            font-weight: 500;
+            font-size: inherit;
+          }
+        }
+      }
+
+      button {
+        background-color: $primary;
+        color: $white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border-radius: 15px;
+        padding: 17px 20px;
+        width: 100%;
+      }
+    }
+
+    .or {
+      margin: 35px 0;
+      text-align: center;
+      color: $gray;
+    }
+
+    .grid {
+      display: flex;
+
+      .grid-half {
+        width: 50%;
+        padding: 0 10px;
+      }
+    }
+
+    .social-icon {
+      display: flex;
+      justify-content: center;
+      padding: 15px 30px;
+      border: 1px solid transparentize($gray, 0.7);
+      border-radius: 20px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

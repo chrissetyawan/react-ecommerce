@@ -1,0 +1,34 @@
+@import "../../scss/variables";
+
+.search-view {
+  @extend %view-basic;
+
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .let-search {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+      width: 40%;
+      height: 40%;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  .products {
+    padding: 0 20px;
+  }
+
+}

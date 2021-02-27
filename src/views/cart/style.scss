@@ -1,0 +1,10 @@
+@import "../../scss/variables";
+
+.cart-view {
+  @extend %view-basic;
+
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

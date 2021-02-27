@@ -1,0 +1,51 @@
+@import "../../scss/variables";
+
+.bottom-navigation {
+  width: 100%;
+  z-index: 10;
+  background-color: $white;
+  border-top: 1px solid transparentize($gray, 0.8);
+  box-shadow:
+    0 0px 1.2px -15px rgba(0, 0, 0, 0.223),
+    0 0px 3.3px -15px rgba(0, 0, 0, 0.32),
+    0 0px 7.8px -15px rgba(0, 0, 0, 0.417),
+    0 0px 26px -15px rgba(0, 0, 0, 0.64)
+  ;
+
+  @media(max-width: $mobile-screen) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+
+    li {
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+          color: $gray;
+        }
+
+        .name {
+          color: $black;
+          margin-top: 2px;
+          font-size: 0.7rem;
+        }
+      }
+
+      &.active {
+        a svg {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../scss/variables";
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+
+  &:first-child {
+    margin-left: 20px;
+  }
+
+  .icon {
+    background-color: $light-gray;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    img {
+      width: 70%;
+      height: 70%;
+    }
+  }
+
+  .name {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}

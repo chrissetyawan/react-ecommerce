@@ -1,0 +1,118 @@
+@import "../../scss/variables";
+
+.detail-product-view {
+  @extend %view-basic;
+
+  .content {
+    padding: 20px;
+
+    @media (max-width: $mobile-screen) {
+      padding-bottom: 100px;
+    }
+  }
+
+  .detail-product {
+
+    .thumbnail {
+      position: relative;
+      width: 100%;
+      height: 300px;
+
+      .img {
+        border-radius: 20px;
+        width: inherit;
+        height: inherit;
+        object-fit: contain;
+      }
+
+      .share {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: transparentize($black, 0.5);
+
+        svg {
+          stroke: $white;
+        }
+      }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      .title {
+        font-weight: 600;
+      }
+
+      .like {
+        outline: none;
+        background-color: transparent;
+
+        svg {
+          stroke: $gray;
+        }
+
+        &.active svg {
+          stroke: $pink;
+          fill: $pink;
+        }
+      }
+    }
+
+    .description {
+      margin-top: 10px;
+      font-size: 1rem;
+      text-align: justify;
+    }
+  }
+
+  .bottom-bar {
+    padding-right: 20px;
+    width: 100%;
+    min-height: 70px;
+    max-height: 70px;
+    background-color: $white;
+    border-top: 1px solid transparentize($gray, 0.8);
+    box-shadow:
+      0 0px 1.2px -15px rgba(0, 0, 0, 0.223),
+      0 0px 3.3px -15px rgba(0, 0, 0, 0.32),
+      0 0px 7.8px -15px rgba(0, 0, 0, 0.417),
+      0 0px 26px -15px rgba(0, 0, 0, 0.64)
+    ;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media(max-width: $mobile-screen) {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .price {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-right: 20px;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      cursor: pointer;
+      background-color: $primary;
+      border-radius: 50px;
+      padding: 7px 20px;
+      font-weight: 500;
+      color: $white;
+      font-size: 1.3rem;
+    }
+  }
+}
