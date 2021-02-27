@@ -22,16 +22,11 @@ const Search = () => {
             setIsFetching(true);
             const response = await Axios.get(API_URL);
             const products = response.data[0].data.productPromo;
-            if (value) {
-                setProducts(
-                    products
-                        .filter(product => !value || product.title.toLowerCase().includes(value))
-                        .map((product) => <Product key={product.id} {...product} />)
-                );
-            } else {
-                setProducts(products.map((product) => <Product key={product.id} {...product} />));
-            }
-            
+            setProducts(
+                products
+                    .filter(product => !value || product.title.toLowerCase().includes(value))
+                    .map((product) => <Product key={product.id} {...product} />)
+            );
             setIsFetching(false);
         }
         catch (e)
