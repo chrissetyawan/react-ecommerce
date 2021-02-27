@@ -1,7 +1,7 @@
 import "./style.scss";
 import Navbar from "../../components/navbar/navbar";
 import BottomNavigation from "../../components/bottom_navigation/bottom-navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import {API_URL} from "../../config";
 import ProductPlaceholder from "../../components/product-placeholder/product-placeholder";
@@ -14,17 +14,24 @@ const Search = () => {
     const [IsFetching, setIsFetching] = useState(false);
     const [Products, setProducts] = useState(null);
 
+    useEffect(() => fetchProduct(), []);
+
     const fetchProduct = async (value) => {
         try
         {
             setIsFetching(true);
             const response = await Axios.get(API_URL);
             const products = response.data[0].data.productPromo;
-            setProducts(
-                products
-                .filter(product => value && product.title.toLowerCase().includes(value))
-                .map((product) => <Product key={product.id} {...product} />)
-            );
+            if (value) {
+                setProducts(
+                    products
+                        .filter(product => !value || product.title.toLowerCase().includes(value))
+                        .map((product) => <Product key={product.id} {...product} />)
+                );
+            } else {
+                setProducts(products.map((product) => <Product key={product.id} {...product} />));
+            }
+            
             setIsFetching(false);
         }
         catch (e)

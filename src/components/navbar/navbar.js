@@ -24,8 +24,10 @@ const Navbar = ({onTyping, title, withBack}) => {
     }
 
     const doneTyping = () => {
-        const value = $input.current.value;
-        onTyping(value);
+        if ($input.current) {
+            const value = $input.current.value;
+            onTyping(value);
+        }
     }
 
     const handleBackButton = () => {
